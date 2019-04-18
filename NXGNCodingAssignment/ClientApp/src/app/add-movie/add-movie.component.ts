@@ -17,6 +17,7 @@ export class AddMovieComponent implements OnInit {
 
   ngOnInit() { }
 
+ 
   addMovie(dataMovie) {
     this.restApi.AddMovie(this.movieDetails).subscribe((data: {}) => {
       this.router.navigate([''])

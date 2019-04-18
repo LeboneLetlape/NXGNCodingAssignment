@@ -30,13 +30,13 @@ export class RestApiService {
     })
   }
 
-  // HttpClient API get() method => Fetch employees list
+  // HttpClient API get() method => Fetch Movie list
   GetMovies(): Observable<Movie> {
     return this.http.get<Movie>(this.apiURL + 'api/MovieData/GetMovies/')
       .pipe(retry(1), catchError(this.handleError))
   }
 
-  // HttpClient API get() method => Fetch employee
+  // HttpClient API get() method => Fetch Movie
   GetMovieById(id): Observable<Movie> {
     return this.http.get<Movie>(this.apiURL + 'api/MovieData/' + id)
       .pipe(
@@ -45,7 +45,7 @@ export class RestApiService {
       )
   }
 
-  // HttpClient API post() method => Create employee
+  // HttpClient API post() method => Create Movie
   AddMovie(Movie): Observable<Movie> {
     return this.http.post<Movie>(this.apiURL + 'api/MovieData/AddMovie/', JSON.stringify(Movie), this.httpOptions)
       .pipe(
@@ -54,7 +54,7 @@ export class RestApiService {
       )
   }
 
-  // HttpClient API put() method => Update employee
+  // HttpClient API put() method => Update Movie
   EditMovie(id, Movie): Observable<Movie> {
     return this.http.put<Movie>(this.apiURL + 'api/MovieData/' + id, JSON.stringify(Movie), this.httpOptions)
       .pipe(
@@ -63,7 +63,7 @@ export class RestApiService {
       )
   }
 
-  // HttpClient API delete() method => Delete employee
+  // HttpClient API delete() method => Delete Movie
   DeleteMovie(id) {
     return this.http.delete<Movie>(this.apiURL + 'api/MovieData/' + id, this.httpOptions)
       .pipe(

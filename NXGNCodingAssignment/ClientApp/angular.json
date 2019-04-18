@@ -20,7 +20,7 @@
             "assets": [
               "src/assets"
             ],
-            "scripts": [ "node_modules/jquery/dist/jquery.js" ],
+            "scripts": [ "node_modules/jquery/dist/jquery.js"],
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -70,10 +70,10 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "scripts": [ "node_modules/jquery/dist/jquery.js"],
+            "scripts": [ "node_modules/jquery/dist/jquery.js", "node_modules/datatables.net/js/jquery.dataTables.js" ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
+              
 
             ],
             "assets": [

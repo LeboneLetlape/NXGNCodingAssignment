@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { RestApiService } from "../shared/rest-api.service";
+declare var $;
 
 
 @Component({
@@ -7,7 +8,8 @@ import { RestApiService } from "../shared/rest-api.service";
   templateUrl: './movie-list.component.html'
 })
 export class MovieListComponent implements OnInit {
-
+  @ViewChild('dataTable') table;
+  dataTable: any;
   Movie: any = [];
   constructor(
     public restApi: RestApiService
@@ -15,6 +17,8 @@ export class MovieListComponent implements OnInit {
 
   ngOnInit() {
     this.loadMovies()
+    this.dataTable = $(this.table.nativeElement);
+    this.dataTable.DataTable();
   }
 
   // Get movie list
