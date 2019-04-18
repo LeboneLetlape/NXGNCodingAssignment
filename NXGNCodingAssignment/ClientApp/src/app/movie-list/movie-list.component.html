@@ -1,0 +1,37 @@
+<h1>Movies</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!Movie"><em>Loading...</em></p>
+
+<table id="movie-table" class='table table-striped table-bordered table-sm row-border hover' *ngIf="Movie">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Rate</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of Movie">
+      <td>{{ movie.id }}</td>
+      <td>{{ movie.name }}</td>
+      <td>{{ movie.category }}</td>
+      <td>{{ movie.rate }}</td>
+      <td>
+        <span class="btn btn-primary" [routerLink]="['edit-movie',movie.id]">Edit</span>
+      </td>
+      <td>
+        <span class="btn btn-danger" (click)="deleteMovie(movie.id)">Delete</span>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+<br />
+<br />
+<button class="btn btn-outline-primary" routerLink="/add-movie">Add Movie</button>
+
