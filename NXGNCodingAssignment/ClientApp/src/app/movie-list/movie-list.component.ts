@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from "../shared/rest-api.service";
 
+
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html'
@@ -8,7 +9,6 @@ import { RestApiService } from "../shared/rest-api.service";
 export class MovieListComponent implements OnInit {
 
   Movie: any = [];
-
   constructor(
     public restApi: RestApiService
   ) { }
@@ -21,6 +21,7 @@ export class MovieListComponent implements OnInit {
   loadMovies() {
     return this.restApi.GetMovies().subscribe((data: {}) => {
       this.Movie = data;
+      
     })
   }
 
